@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Expense Tracker</h1>
+    <p class="subtitle">Track daily income, expenses, and savings easily.</p>
+
+    <div class="card form-card">
+      <div class="row">
+        <label>Type</label>
+        <select id="type">
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Amount</label>
+        <input id="amount" type="number" step="0.01" placeholder="Enter amount" />
+      </div>
+
+      <div class="row">
+        <label>Category</label>
+        <select id="category">
+          <option>Food</option>
+          <option>Travel</option>
+          <option>Study</option>
+          <option>Health</option>
+          <option>Shopping</option>
+          <option>Bills</option>
+          <option>Other</option>
+          <option>Income</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Date</label>
+        <input id="date" type="date" />
+      </div>
+
+      <div class="row">
+        <label>Note</label>
+        <input id="note" type="text" placeholder="Optional note" />
+      </div>
+
+      <button onclick="addTransaction()">Add Transaction</button>
+    </div>
+
+    <div class="grid">
+      <div class="card stat">
+        <h3>Total Income</h3>
+        <p id="incomeTotal">0</p>
+      </div>
+      <div class="card stat">
+        <h3>Total Expense</h3>
+        <p id="expenseTotal">0</p>
+      </div>
+      <div class="card stat">
+        <h3>Savings</h3>
+        <p id="savingsTotal">0</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="topbar">
+        <h2>Transactions</h2>
+        <button class="secondary" onclick="clearAll()">Clear All</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Note</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="topbar">
+        <h2>Category Report</h2>
+      </div>
+      <div id="report"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
